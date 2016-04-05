@@ -165,4 +165,13 @@ if __name__ == "__main__":
     h.FillRandom("gaus1", 50000)
     h.GetXaxis().SetNdivisions(5)
     h.Draw()
+
+    legend_args = (0.645, 0.79, 0.985, 0.91, '', 'NDC')
+
+    legend = TLegend(*legend_args)
+    legend.SetFillStyle(0)
+    legend.AddEntry(h, "h1", "l")
+    legend.AddEntry(h, "h1 again", "l")
+    legend.Draw()
+    
     gPad.Update()
