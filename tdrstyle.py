@@ -80,10 +80,10 @@ def setTDRStyle():
   # tdrStyle.SetStatY(Float_t y = 0)
 
 # Margins:
-  tdrStyle.SetPadTopMargin(0.05)
-  tdrStyle.SetPadBottomMargin(0.13)
-  tdrStyle.SetPadLeftMargin(0.16)
-  tdrStyle.SetPadRightMargin(0.02)
+  tdrStyle.SetPadTopMargin(0.1)
+  tdrStyle.SetPadBottomMargin(0.18)
+  tdrStyle.SetPadLeftMargin(0.18)
+  tdrStyle.SetPadRightMargin(0.1)
 
 # For the Global title:
 
@@ -107,8 +107,8 @@ def setTDRStyle():
   tdrStyle.SetTitleSize(0.06, "XYZ")
   # tdrStyle.SetTitleXSize(Float_t size = 0.02) # Another way to set the size?
   # tdrStyle.SetTitleYSize(Float_t size = 0.02)
-  tdrStyle.SetTitleXOffset(0.9)
-  tdrStyle.SetTitleYOffset(1.25)
+  tdrStyle.SetTitleXOffset(1.1)
+  tdrStyle.SetTitleYOffset(1.45)
   # tdrStyle.SetTitleOffset(1.1, "Y") # Another way to set the Offset
 
 # For the axis labels:
@@ -150,8 +150,8 @@ def setTDRStyle():
   tdrStyle.SetHatchesSpacing(0.05)
 
   tdrStyle.SetLegendBorderSize(0)
-  rt.TGaxis.SetMaxDigits(3)
-  
+  # rt.TGaxis.SetMaxDigits(3)
+
   tdrStyle.cd()
 
 if __name__ == "__main__":
@@ -169,7 +169,7 @@ if __name__ == "__main__":
     h.GetXaxis().SetNdivisions(5)
     h.Draw()
 
-    legend_args = (0.645, 0.79, 0.985, 0.91, '', 'NDC')
+    legend_args = (0.63, 0.7, 0.9, 0.85, '', 'NDC')
 
     legend = TLegend(*legend_args)
     legend.SetFillStyle(0)
