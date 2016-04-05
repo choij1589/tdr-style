@@ -42,7 +42,7 @@ def setTDRStyle():
   #tdrStyle.SetHistFillStyle(0)
   tdrStyle.SetHistLineColor(1)
   tdrStyle.SetHistLineStyle(0)
-  tdrStyle.SetHistLineWidth(1)
+  tdrStyle.SetHistLineWidth(2)
   #tdrStyle.SetLegoInnerR(Float_t rad = 0.5)
   #tdrStyle.SetNumberContours(Int_t number = 20)
 
@@ -149,6 +149,9 @@ def setTDRStyle():
   tdrStyle.SetHatchesLineWidth(5)
   tdrStyle.SetHatchesSpacing(0.05)
 
+  tdrStyle.SetLegendBorderSize(0)
+  rt.TGaxis.SetMaxDigits(3)
+  
   tdrStyle.cd()
 
 if __name__ == "__main__":
