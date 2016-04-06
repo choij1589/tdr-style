@@ -20,6 +20,7 @@ def setTDRStyle():
 
 
   tdrStyle.SetPadBorderMode(0)
+  
   #tdrStyle.SetPadBorderSize(Width_t size = 1)
   tdrStyle.SetPadColor(rt.kWhite)
   tdrStyle.SetPadGridX(False)
