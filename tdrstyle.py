@@ -36,7 +36,7 @@ def setTDRStyle():
   tdrStyle.SetFrameLineColor(1)
   tdrStyle.SetFrameLineStyle(1)
   tdrStyle.SetFrameLineWidth(1)
-  
+
 #For the histo:
   #tdrStyle.SetHistFillColor(1)
   #tdrStyle.SetHistFillStyle(0)
@@ -49,9 +49,9 @@ def setTDRStyle():
   tdrStyle.SetEndErrorSize(2)
   #tdrStyle.SetErrorMarker(20)
   #tdrStyle.SetErrorX(0.)
-  
+
   tdrStyle.SetMarkerStyle(20)
-  
+
 #For the fit/function:
   tdrStyle.SetOptFit(1)
   tdrStyle.SetFitFormat("5.4g")
@@ -151,7 +151,7 @@ def setTDRStyle():
 
   tdrStyle.SetLegendBorderSize(0)
 
-  
+
   tdrStyle.cd()
 
 if __name__ == "__main__":
@@ -159,9 +159,9 @@ if __name__ == "__main__":
     from ROOT import gStyle, TH1F, gPad, TLegend, TF1, TCanvas
 
     setTDRStyle()
-    
-    c1 = TCanvas("c1", "c1") 
-    
+
+    c1 = TCanvas("c1", "c1")
+
     h = TH1F("h", "; p_{T}^{Bar} [TeV]; Events / 2 TeV [10^{3}]", 50, -50, 50)
     gaus1 = TF1('gaus1', 'gaus')
     gaus1.SetParameters(1, 0, 5)
@@ -178,5 +178,5 @@ if __name__ == "__main__":
     legend.AddEntry(h, "h1", "l")
     legend.AddEntry(h, "h1 again", "l")
     legend.Draw()
-    
+
     gPad.Update()
