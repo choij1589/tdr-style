@@ -42,7 +42,7 @@ def setTDRStyle():
   #tdrStyle.SetHistFillStyle(0)
   tdrStyle.SetHistLineColor(1)
   tdrStyle.SetHistLineStyle(0)
-  tdrStyle.SetHistLineWidth(1)
+  tdrStyle.SetHistLineWidth(2)
   #tdrStyle.SetLegoInnerR(Float_t rad = 0.5)
   #tdrStyle.SetNumberContours(Int_t number = 20)
 
@@ -81,9 +81,9 @@ def setTDRStyle():
 
 # Margins:
   tdrStyle.SetPadTopMargin(0.05)
-  tdrStyle.SetPadBottomMargin(0.13)
+  tdrStyle.SetPadBottomMargin(0.15)
   tdrStyle.SetPadLeftMargin(0.16)
-  tdrStyle.SetPadRightMargin(0.02)
+  tdrStyle.SetPadRightMargin(0.04)
 
 # For the Global title:
 
@@ -107,7 +107,7 @@ def setTDRStyle():
   tdrStyle.SetTitleSize(0.06, "XYZ")
   # tdrStyle.SetTitleXSize(Float_t size = 0.02) # Another way to set the size?
   # tdrStyle.SetTitleYSize(Float_t size = 0.02)
-  tdrStyle.SetTitleXOffset(0.9)
+  tdrStyle.SetTitleXOffset(1.1)
   tdrStyle.SetTitleYOffset(1.25)
   # tdrStyle.SetTitleOffset(1.1, "Y") # Another way to set the Offset
 
@@ -149,7 +149,7 @@ def setTDRStyle():
   tdrStyle.SetHatchesLineWidth(5)
   tdrStyle.SetHatchesSpacing(0.05)
 
-  # tdrStyle.SetLegendBorderSize(0)
+  tdrStyle.SetLegendBorderSize(0)
 
   
   tdrStyle.cd()
