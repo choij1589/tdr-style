@@ -149,8 +149,8 @@ def setTDRStyle():
   tdrStyle.SetHatchesLineWidth(5)
   tdrStyle.SetHatchesSpacing(0.05)
 
-  tdrStyle.SetLegendBorderSize(0)
-  # rt.TGaxis.SetMaxDigits(3)
+  # tdrStyle.SetLegendBorderSize(0)
+
   
   tdrStyle.cd()
 
@@ -162,12 +162,13 @@ if __name__ == "__main__":
     
     c1 = TCanvas("c1", "c1") 
     
-    h = TH1F("h", "; p_{T}^{Bar} [TeV]; stuff_{index}^{Power} [10^{3}/GeV]", 50, -40, 40)
+    h = TH1F("h", "; p_{T}^{Bar} [TeV]; Events / 2 TeV [10^{3}]", 50, -50, 50)
     gaus1 = TF1('gaus1', 'gaus')
     gaus1.SetParameters(1, 0, 5)
     h.FillRandom("gaus1", 50000)
     h.Scale(0.001)
-    h.GetXaxis().SetNdivisions(5)
+    # h.GetXaxis().SetNdivisions(5)
+    # h.GetXaxis().SetRangeUser(-70,70)
     h.Draw()
 
     legend_args = (0.645, 0.79, 0.985, 0.91, '', 'NDC')
