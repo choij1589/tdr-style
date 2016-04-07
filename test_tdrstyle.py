@@ -30,6 +30,7 @@ class Plot(object):
 if __name__ == '__main__':
 
     import tdrstyle
+    from ROOT import gPad
     
     test1 = Plot('test1')
     tdrstyle.cmsPrel(25000., 8., True)
@@ -43,3 +44,4 @@ if __name__ == '__main__':
     test4 = Plot('test4', onLeft=True)
     tdrstyle.cmsPrel(-1, 8., True, onLeft=False)
     
+    gPad.Update()
