@@ -23,10 +23,10 @@ class Plot(object):
         self.legend.AddEntry(self.hist, self.hist.GetName(), "l")
         self.legend.AddEntry(self.hist, self.hist.GetName()+' b', "l")
         self.legend.Draw()
-        self.canvas.Update()
-        self.canvas.SaveAs('.'.join([name, 'png']))
 
-
+    def save(self):
+        self.canvas.SaveAs('.'.join([self.name, 'png']))
+        
 if __name__ == '__main__':
 
     import tdrstyle
@@ -34,14 +34,18 @@ if __name__ == '__main__':
     
     test1 = Plot('test1')
     tdrstyle.cmsPrel(25000., 8., True)
-
+    test1.save()
+    
     test2 = Plot('test2')
     tdrstyle.cmsPrel(25000., 13., False)
+    test2.save()
 
     test3 = Plot('test3')
     tdrstyle.cmsPrel(-1, 8., True)
+    test3.save()
     
     test4 = Plot('test4', onLeft=True)
     tdrstyle.cmsPrel(-1, 8., True, onLeft=False)
+    test4.save()
     
     gPad.Update()
