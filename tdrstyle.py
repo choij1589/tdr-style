@@ -2,6 +2,21 @@ import ROOT as rt
 
 
 def cmsPrel(lumi,  energy,  simOnly,  onLeft=True,  sp=0, textScale=1.):
+  '''Overlay CMS information text: 
+    CMS
+    Simulation, if applicable
+    luminosity and sqrt(s) 
+
+  Parameters:
+  - lumi: luminosity, in pb 
+  - energy: sqrt(s), in TeV
+  - simOnly: if set to True, print Simulation below CMS
+  - onLeft: print CMS (Simulation) on the left side of the pad. 
+    otherwise, print it on the right side. 
+  - spacing for text in the top margin, do not touch.
+  - textScale: set to 1 by default. You might want to use a larger 
+    factor to scale up all texts in case your plots are small in your paper.
+  '''
 
   latex = rt.TLatex()
   
