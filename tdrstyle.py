@@ -1,5 +1,67 @@
 import ROOT as rt
 
+
+def cmsPrel(lumi,  energy,  simOnly,  onLeft=True,  sp=0, textScale=1.):
+
+  latex = rt.TLatex()
+  
+  t = rt.gStyle.GetPadTopMargin()/(1-sp)
+  tmpTextSize=0.75*t
+  latex.SetTextSize(tmpTextSize)
+  latex.SetNDC()
+  textSize=latex.GetTextSize()
+  textSize*=textScale
+  
+  latex.SetName("lumiText")
+  latex.SetTextFont(42)
+  
+  lumyloc = 0.965
+  cmsyloc = 0.893
+  simyloc = 0.858
+  if sp!=0:
+    lumyloc = 0.945
+    cmsyloc = 0.85
+    simyloc = 0.8
+  cmsalign = 31
+  cmsxloc = 0.924
+  if onLeft:
+    cmsalign = 11
+    cmsxloc = 0.204
+  xlumi = 1-rt.gStyle.GetPadRightMargin()
+  if (lumi > 0.):
+    latex.SetTextAlign(31) # align left, right=31
+    latex.SetTextSize(textSize*0.6/0.75)
+    if(lumi > 1000. ):
+      latex.DrawLatex(xlumi,lumyloc,
+                      " {lumi} fb^{{-1}} ({energy} TeV)".format(
+                      lumi=lumi/1000.,
+                      energy=energy
+                      ))
+    else:
+      latex.DrawLatex(xlumi,lumyloc,
+                      " {lumi} pb^{{-1}} ({energy} TeV)".format(
+                      lumi=lumi,
+                      energy=energy
+                      ))
+  
+  else:
+    latex.SetTextAlign(31) # align right=31
+    latex.SetTextSize(textSize*0.6/0.75)
+    latex.DrawLatex(xlumi,lumyloc," {energy} TeV".format(energy=energy))
+  
+ 
+  latex.SetTextAlign(cmsalign) # align left / right
+  latex.SetTextFont(61)
+  latex.SetTextSize(textSize)
+  latex.DrawLatex(cmsxloc, cmsyloc,"CMS")
+  
+  latex.SetTextFont(52)
+  latex.SetTextSize(textSize*0.76)
+  
+  if(simOnly):
+    latex.DrawLatex(cmsxloc, simyloc,"Simulation")
+
+
 def tdrGrid( gridOn):
   tdrStyle.SetPadGridX(gridOn)
   tdrStyle.SetPadGridY(gridOn)
@@ -154,15 +216,15 @@ def setTDRStyle():
 
   tdrStyle.cd()
 
+setTDRStyle()  
+
 if __name__ == "__main__":
 
     from ROOT import gStyle, TH1F, gPad, TLegend, TF1, TCanvas
 
-    setTDRStyle()
-
     c1 = TCanvas("c1", "c1")
 
-    h = TH1F("h", "; p_{T}^{Bar} [TeV]; Events / 2 TeV [10^{3}]", 50, -50, 50)
+    h = TH1F("h", "; p_{T}^{Bar} (TeV); Events / 2 TeV (10^{3})", 50, -50, 50)
     gaus1 = TF1('gaus1', 'gaus')
     gaus1.SetParameters(1, 0, 5)
     h.FillRandom("gaus1", 50000)
@@ -179,4 +241,7 @@ if __name__ == "__main__":
     legend.AddEntry(h, "h1 again", "l")
     legend.Draw()
 
+    cmsPrel(25000., 8., True)
+
     gPad.Update()
+    gPad.SaveAs('tdrstyle.png')
