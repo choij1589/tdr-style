@@ -32,7 +32,8 @@ def cmsPrel(lumi,  energy,  simOnly,  onLeft=True,  sp=0, textScale=1.):
   - textScale: set to 1 by default. You might want to use a larger 
     factor to scale up all texts in case your plots are small in your paper.
   '''
-
+  energy = int(energy)
+  
   latex = rt.TLatex()
   
   t = rt.gStyle.GetPadTopMargin()/(1-sp)
