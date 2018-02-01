@@ -9,7 +9,7 @@ class Plot(object):
         gaus1 = TF1('gaus1', 'gaus')
         gaus1.SetParameters(1, 0, 5)
         self.hist.FillRandom("gaus1", 50000)
-        self.hist.Scale(0.001)
+        self.hist.Scale(0.00001)
         # self.hist.GetXaxis().SetNdivisions(5)
         # self.hist.GetXaxis().SetRangeUser(-70,70)
         self.hist.Draw()
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     from ROOT import gPad
     
     test1 = Plot('test1')
-    tdrstyle.cmsPrel(25000., 8., True)
+    # tdrstyle.cmsPrel(25000., 8., True)
     test1.save()
     
     test2 = Plot('test2')
