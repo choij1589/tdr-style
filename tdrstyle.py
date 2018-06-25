@@ -17,7 +17,7 @@ import ROOT as rt
 
 
 
-def cmsPrel(lumi,  energy=None,  simOnly=True,  onLeft=True,  sp=0, textScale=1., xoffset=0., thisIsPrelim=True):
+def cmsPrel(lumi,  energy=None,  simOnly=True,  onLeft=True,  sp=0, textScale=1., xoffset=0., thisIsPrelim=False):
   '''Overlay CMS information text: 
     CMS
     Simulation, if applicable
