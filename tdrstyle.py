@@ -17,7 +17,7 @@ import ROOT as rt
 
 
 
-def cmsPrel(lumi,  energy=None,  simOnly=True,  onLeft=True,  sp=0, textScale=1., xoffset=0.):
+def cmsPrel(lumi,  energy=None,  simOnly=True,  onLeft=True,  sp=0, textScale=1., xoffset=0., thisIsPrelim=True):
   '''Overlay CMS information text: 
     CMS
     Simulation, if applicable
@@ -98,6 +98,8 @@ def cmsPrel(lumi,  energy=None,  simOnly=True,  onLeft=True,  sp=0, textScale=1.
   
   if(simOnly):
     latex.DrawLatex(cmsxloc, simyloc,"Simulation")
+  elif thisIsPrelim:
+    latex.DrawLatex(cmsxloc, simyloc, "Preliminary")
 
 
 def tdrGrid( gridOn):
