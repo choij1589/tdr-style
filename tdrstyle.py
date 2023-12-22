@@ -88,18 +88,18 @@ def cmsPrel(lumi,  energy=None,  simOnly=True,  onLeft=True,  sp=0, textScale=1.
       latex.DrawLatex(xlumi,lumyloc," {energy} TeV".format(energy=energy))
   
  
-  latex.SetTextAlign(cmsalign) # align left / right
-  latex.SetTextFont(61)
-  latex.SetTextSize(textSize)
-  latex.DrawLatex(cmsxloc, cmsyloc,"CMS")
+  #latex.SetTextAlign(cmsalign) # align left / right
+  #latex.SetTextFont(61)
+  #latex.SetTextSize(textSize)
+  #latex.DrawLatex(cmsxloc, cmsyloc,"CMS")
   
-  latex.SetTextFont(52)
-  latex.SetTextSize(textSize*0.76)
+  #latex.SetTextFont(52)
+  #latex.SetTextSize(textSize*0.76)
   
-  if(simOnly):
-    latex.DrawLatex(cmsxloc, simyloc,"Simulation")
-  elif thisIsPrelim:
-    latex.DrawLatex(cmsxloc, simyloc, "Preliminary")
+  #if(simOnly):
+  #  latex.DrawLatex(cmsxloc, simyloc,"Simulation")
+  #elif thisIsPrelim:
+  #  latex.DrawLatex(cmsxloc, simyloc, "Preliminary")
 
 
 def tdrGrid( gridOn):
@@ -112,7 +112,7 @@ def fixOverlay(): gPad.RedrawAxis()
 def setTDRStyle(square=True):
   tdrStyle =  rt.TStyle("tdrStyle","Style for P-TDR")
 
-   #for the canvas:
+  #for the canvas:
   tdrStyle.SetCanvasBorderMode(0)
   tdrStyle.SetCanvasColor(rt.kWhite)
   if square:    
@@ -130,7 +130,7 @@ def setTDRStyle(square=True):
   tdrStyle.SetGridStyle(3)
   tdrStyle.SetGridWidth(1)
 
-#For the frame:
+  #For the frame:
   tdrStyle.SetFrameBorderMode(0)
   tdrStyle.SetFrameBorderSize(1)
   tdrStyle.SetFrameFillColor(0)
@@ -139,7 +139,7 @@ def setTDRStyle(square=True):
   tdrStyle.SetFrameLineStyle(1)
   tdrStyle.SetFrameLineWidth(1)
 
-#For the histo:
+  #For the histo:
   #tdrStyle.SetHistFillColor(1)
   #tdrStyle.SetHistFillStyle(0)
   tdrStyle.SetHistLineColor(1)
@@ -154,19 +154,19 @@ def setTDRStyle(square=True):
 
   tdrStyle.SetMarkerStyle(20)
 
-#For the fit/function:
+  #For the fit/function:
   tdrStyle.SetOptFit(1)
   tdrStyle.SetFitFormat("5.4g")
   tdrStyle.SetFuncColor(2)
   tdrStyle.SetFuncStyle(1)
   tdrStyle.SetFuncWidth(1)
 
-#For the date:
+  #For the date:
   tdrStyle.SetOptDate(0)
   # tdrStyle.SetDateX(Float_t x = 0.01)
   # tdrStyle.SetDateY(Float_t y = 0.01)
 
-# For the statistics box:
+  # For the statistics box:
   tdrStyle.SetOptFile(0)
   tdrStyle.SetOptStat(0) # To display the mean and RMS:   SetOptStat("mr")
   tdrStyle.SetStatColor(rt.kWhite)
@@ -181,14 +181,13 @@ def setTDRStyle(square=True):
   # tdrStyle.SetStatX(Float_t x = 0)
   # tdrStyle.SetStatY(Float_t y = 0)
 
-# Margins:
+  # Margins:
   tdrStyle.SetPadTopMargin(0.05)
   tdrStyle.SetPadBottomMargin(0.15)
   tdrStyle.SetPadLeftMargin(0.16)
   tdrStyle.SetPadRightMargin(0.04)
 
-# For the Global title:
-
+  # For the Global title:
   tdrStyle.SetOptTitle(0)
   tdrStyle.SetTitleFont(42)
   tdrStyle.SetTitleColor(1)
@@ -202,8 +201,7 @@ def setTDRStyle(square=True):
   # tdrStyle.SetTitleStyle(Style_t style = 1001)
   # tdrStyle.SetTitleBorderSize(2)
 
-# For the axis titles:
-
+  # For the axis titles:
   tdrStyle.SetTitleColor(1, "XYZ")
   tdrStyle.SetTitleFont(42, "XYZ")
   tdrStyle.SetTitleSize(0.06, "XYZ")
@@ -215,15 +213,13 @@ def setTDRStyle(square=True):
     tdrStyle.SetTitleYOffset(1.1)
   # tdrStyle.SetTitleOffset(1.1, "Y") # Another way to set the Offset
 
-# For the axis labels:
-
+  # For the axis labels:
   tdrStyle.SetLabelColor(1, "XYZ")
   tdrStyle.SetLabelFont(42, "XYZ")
   tdrStyle.SetLabelOffset(0.007, "XYZ")
   tdrStyle.SetLabelSize(0.05, "XYZ")
 
-# For the axis:
-
+  # For the axis:
   tdrStyle.SetAxisColor(1, "XYZ")
   tdrStyle.SetStripDecimals(True)
   tdrStyle.SetTickLength(0.03, "XYZ")
@@ -232,12 +228,12 @@ def setTDRStyle(square=True):
   tdrStyle.SetPadTickY(1)
   # tdrStyle.SetMaxDigits(3)
   
-# Change for log plots:
+  # Change for log plots:
   tdrStyle.SetOptLogx(0)
   tdrStyle.SetOptLogy(0)
   tdrStyle.SetOptLogz(0)
 
-# Postscript options:
+  # Postscript options:
   tdrStyle.SetPaperSize(20.,20.)
   # tdrStyle.SetLineScalePS(Float_t scale = 3)
   # tdrStyle.SetLineStyleString(Int_t i, const char* text)
@@ -251,13 +247,12 @@ def setTDRStyle(square=True):
   # tdrStyle.SetTimeOffset(Double_t toffset)
   # tdrStyle.SetHistMinimumZero(kTRUE)
 
-#  tdrStyle.SetHatchesLineWidth(5)
-#  tdrStyle.SetHatchesSpacing(0.05)
+  # tdrStyle.SetHatchesLineWidth(5)
+  # tdrStyle.SetHatchesSpacing(0.05)
 
   tdrStyle.SetLegendBorderSize(0)
-
-
   tdrStyle.cd()
+
 
 setTDRStyle()  
 
